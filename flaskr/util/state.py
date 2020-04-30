@@ -9,16 +9,13 @@ def set_state(**kwargs):
         _state['refresh_token'] = kwargs['refresh_token']
     if 'user' in kwargs:
         _state['user'] = kwargs['user']
-    if 'fields' in kwargs:
-        _state['fields'] = kwargs['fields']
 
 
 def clear_state():
     set_state(
         access_token=None,
         refresh_token=None,
-        user=None,
-        fields=None
+        user=None
     )
 
 

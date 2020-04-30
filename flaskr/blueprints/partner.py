@@ -1,11 +1,9 @@
-import os
-
 from flask import Blueprint, render_template, url_for
 
 from flaskr.blueprints import api
 from flaskr.util.state import state
 
-bp = Blueprint("partner", __name__, url_prefix="/partner")
+bp = Blueprint("partner", __name__)
 
 # Configuration of your APP partner credentials. This assumes you have
 # placed them in your environment.

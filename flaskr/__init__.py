@@ -48,6 +48,6 @@ def create_app(test_config=None):
     app.register_blueprint(partner.bp)
 
     # make url_for('index') == url_for('partner.index')
-    app.add_url_rule("/partner/", endpoint="index")
+    app.add_url_rule("/", endpoint="index")
 
     return app
