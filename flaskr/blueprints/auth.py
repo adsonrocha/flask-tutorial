@@ -1,4 +1,5 @@
 import functools
+
 from flask import Blueprint
 from flask import flash
 from flask import g
@@ -9,6 +10,7 @@ from flask import session
 from flask import url_for
 from werkzeug.security import check_password_hash
 from werkzeug.security import generate_password_hash
+
 from flaskr.db import get_db
 
 bp = Blueprint("auth", __name__, url_prefix="/auth")
@@ -40,7 +42,7 @@ def load_logged_in_user():
         )
 
 
-@bp.route("/register", methods=("GET", "POST"))
+@bp.route("/register", methods=["POST"])
 def register():
     """Register a new user. Validates that the username is not already taken. Hashes the password for security."""
     if request.method == "POST":
@@ -70,7 +72,7 @@ def register():
     return render_template("auth/register.html")
 
 
-@bp.route("/login", methods=("GET", "POST"))
+@bp.route("/login", methods=["POST"])
 def login():
     """Log in a registered user by adding the user id to the session."""
     if request.method == "POST":

@@ -1,9 +1,8 @@
-import functools
 import datetime
-import jwt
+import functools
 
-from flask import Blueprint, g, request, jsonify, current_app, redirect, url_for
-from werkzeug.exceptions import abort
+import jwt
+from flask import Blueprint, request, jsonify, current_app
 
 bp = Blueprint("api", __name__, url_prefix="/api")
 
