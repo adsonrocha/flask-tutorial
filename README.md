@@ -8,7 +8,7 @@ python install virtualenv
 virtualenv [-p python3] venv
 venv/Scripts/activate
 ```
-Go to File => settings => Project:<name> => Python Interpreter => 
+Go to File => Settings => Project:<name> => Python Interpreter => 
 *cog icon* => *add/change venv interpreter*
 ```bash
 pip install flask

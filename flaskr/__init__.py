@@ -14,7 +14,7 @@ def create_app(test_config=None):
     # tells the app that configuration files are relative to the instance folder
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY="dev",
+        SECRET_KEY="dev",  # TODO
         DATABASE=os.path.join(app.instance_path, "flaskr.sqlite"),
     )
     logger = Logger(app.logger)

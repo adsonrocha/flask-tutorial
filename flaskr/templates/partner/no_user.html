@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>{% block title %}Partner{% endblock %}</h1>
+<h1>{% block title %}Partner{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
+    <h1>Partner entry point</h1>
+    <h2>Welcome to the PARTNER Demo App</h2>
+    <p>
+        This is the PARTNER web application and you
+        want to connect it with REST API. To do this, you need
+        to let your users establish a secure connection between your app
+        and REST API.
+    </p>
     <p style="text-align:center">
         <a href="{}">
-            <img src="./res/fv-login-button.png">
+            login
         </a>
-    </p>
+    </p>""".format(login_uri)
 {% endblock %}

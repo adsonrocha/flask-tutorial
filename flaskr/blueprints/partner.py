@@ -5,13 +5,11 @@ from flaskr.util.state import state
 
 bp = Blueprint("partner", __name__)
 
-# Configuration of your APP partner credentials. This assumes you have
-# placed them in your environment.
-
-APP_API_ID = ""  # os.environ['APP_API_ID']  # OAuth2 client ID
-APP_API_SECRET = ""  # os.environ['APP_API_SECRET']  # OAuth2 client secret
-APP_API_SCOPES = ""  # os.environ['APP_API_SCOPES']  # Oauth2 scope list
-APP_API_KEY = ""  # os.environ['APP_API_KEY']  # X-Api-Key header
+# Configuration of the REST API credentials
+PARTNER_ID = ""  # os.environ['PARTNER_ID']  # OAuth2 client ID
+PARTNER_SECRET = ""  # os.environ['PARTNER_SECRET']  # OAuth2 client secret
+PARTNER_SCOPES = ""  # os.environ['PARTNER_SCOPES']  # Oauth2 scope list
+PARTNER_KEY = ""  # os.environ['PARTNER_KEY']  # X-Api-Key header
 
 
 # Partner app server
@@ -23,24 +21,20 @@ def index():
 
 
 def user_home():
-    return render_template("partner/home.html",
-                           access_token="",
-                           refresh_token="",
-                           refresh_token_url=""
-                           )
+    return render_template("partner/home.html", access_token="", refresh_token="", refresh_token_url="")
 
 
 def no_user():
     """
-    Page where you present a link to Log In with APP.
+    Page where you present a link to Log in with REST API.
     :return: None
     """
-    login_uri = api.login_uri(APP_API_ID, APP_API_SCOPES, redirect_uri())
+    login_uri = api.login_uri(PARTNER_ID, PARTNER_SCOPES, redirect_uri())
     return render_template("partner/no_user.html", login_uri=login_uri)
 
 
 def redirect_uri():
     """
-    :return: Returns uri for redirection after Log In with APP.
+    :return: Returns uri for redirection after Log In with REST API.
     """
     return url_for('login_redirect', _external=True)
